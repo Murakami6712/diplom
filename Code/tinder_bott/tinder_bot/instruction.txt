@@ -1,0 +1,36 @@
+
+sudo pip install pyTelegramBotAPI
+sudo pip install mtranslate
+
+scp /home/mifaaa93/tinder_bot.zip root@64.226.119.248:/root
+
+root@64.226.119.248
+rva2U@p$c5?BnGw
+
+_________________________________________________
+tinder_bot
+
+sudo nano /etc/systemd/system/tinder_bot.service
+
+[Unit]
+Description=tinder_bot
+After=multi-user.target
+
+[Service]
+Type=idle
+WorkingDirectory=/root/tinder_bot
+ExecStart=python3 /root/tinder_bot/tinder_bot.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+____________________________
+
+sudo systemctl daemon-reload
+sudo systemctl enable tinder_bot
+
+sudo systemctl start tinder_bot
+
+sudo systemctl stop tinder_bot
+
+sudo systemctl status tinder_bot
